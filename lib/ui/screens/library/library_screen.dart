@@ -4,6 +4,7 @@ import 'view_model/library_view_model.dart';
 import '../../../data/repositories/songs/song_repository.dart';
 import '../../states/player_state.dart';
 import 'widgets/library_content.dart';
+import '../../../data/repositories/artist/artist_repository.dart';
 
 class LibraryScreen extends StatelessWidget {
   const LibraryScreen({super.key});
@@ -14,6 +15,7 @@ class LibraryScreen extends StatelessWidget {
       create: (context) => LibraryViewModel(
         playerState: context.read<PlayerState>(),
         songRepository: context.read<SongRepository>(),
+        artistRepository: context.read<ArtistRepository>()
       ),
       child: LibraryContent(),
     );

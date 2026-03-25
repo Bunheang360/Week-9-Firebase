@@ -17,7 +17,8 @@ class ArtistRepositoryFirebase extends ArtistRepository {
 
       for (var iterable in artistJson.entries) {
         Map<String, dynamic> values = iterable.value;
-        result.add(ArtistDto.fromJson(values));
+        String artistId = iterable.key;
+        result.add(ArtistDto.fromJson(artistId, values));
       }
       
       return result;
